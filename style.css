@@ -98,7 +98,7 @@ form ion-icon{
     font-weight: 400;
 }
 
-.view-button {
+.view-button .relative-video {
   text-decoration: none;
   text-align: center;
   margin: 10px;
