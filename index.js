@@ -35,7 +35,7 @@ function generateHTML(results) {
           <a class="view-button" href="${
             result.recipe.url
           }"target="_blank">View Recipe</a>
-          <a class="view-button" href="#">Relative Video</a>
+          <a class="relative-video" href="#">Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
        <p class="title">${
@@ -48,4 +48,11 @@ function generateHTML(results) {
        `;
   });
   searchResultDiv.innerHTML = generatedHTML;
+  $(".relative-video").click(searchYouTube)
 }
+
+function searchYouTube(element){
+  console.log('Hello World')
+  console.log(element)
+}
+
