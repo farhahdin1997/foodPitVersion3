@@ -5,6 +5,7 @@ let searchQuery = "";
 
 const APP_ID = "753e732f";
 const APP_key_recipe = "919bc78d8050b9b0caf8f5423c444aa1";
+const APP_youtube= "AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0"
 
 // https://api.edamam.com/api/nutrition-data?ingr=pizza&app_id=${APP_ID}&app_key=${APP_key_nutrition}&to=10
 
@@ -51,8 +52,13 @@ function generateHTML(results) {
   $(".relative-video").click(searchYouTube)
 }
 
-function searchYouTube(element){
-  console.log('Hello World')
-  console.log(element)
+async function searchYouTube(label){
+  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${label}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
+  const response = await fetch(baseYouTubeURL);
+  console.log(response);
+  const data = await response.json();
+ 
+ 
+  console.log(label)
 }
 
