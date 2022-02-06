@@ -35,16 +35,16 @@ function generateHTML(results) {
           
           <a class="view-button" href="${
             result.recipe.url
-          }"target="_blank">View Recipe</a>
+          }"target="_blank">View Recipe</a> <br>
           <a class="relative-video" href="#">Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
-       <p class="title">${
+       <p class="title is-size-5 ">${
          result.recipe.dietLabels.length > 0
            ? result.recipe.dietLabels
            : "No Data Found"
        }</p> 
-          <p class="title">${result.recipe.healthLabels}</p> 
+          <p class="title is-size-5">${result.recipe.healthLabels}</p> 
        
        `;
   });
@@ -52,13 +52,13 @@ function generateHTML(results) {
   $(".relative-video").click(searchYouTube)
 }
 
-async function searchYouTube(label){
-  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${label}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
+async function searchYouTube(recipe){
+  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${recipe}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
   const response = await fetch(baseYouTubeURL);
   console.log(response);
   const data = await response.json();
  
  
-  console.log(label)
+  console.log(recipe)
 }
 
