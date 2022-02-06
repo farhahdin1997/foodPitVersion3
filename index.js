@@ -7,14 +7,14 @@ const APP_ID = "753e732f";
 const APP_key_recipe = "919bc78d8050b9b0caf8f5423c444aa1";
 const APP_youtube= "AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0"
 
-// https://api.edamam.com/api/nutrition-data?ingr=pizza&app_id=${APP_ID}&app_key=${APP_key_nutrition}&to=10
+
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   searchQuery = e.target.querySelector("input").value;
   fetchAPI(searchQuery);
+  
 });
-
 async function fetchAPI(searchQuery) {
   const baseRecipeURL = `https://api.edamam.com/api/recipes/v2?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key_recipe}&to=10&type=public`;
   const response = await fetch(baseRecipeURL);
@@ -22,6 +22,15 @@ async function fetchAPI(searchQuery) {
   const data = await response.json();
   generateHTML(data.hits);
   console.log(data);
+}
+async function searchYouTube(searchQuery){
+  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/videos?q=${searchQuery}&part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=${APP_youtube}`;
+  const response = await fetch(baseYouTubeURL);
+  console.log(response);
+  
+  return response.json();
+  // generateHTML(data.snippet);
+  // console.log(data)
 }
 
 function generateHTML(results) {
@@ -35,16 +44,17 @@ function generateHTML(results) {
           
           <a class="view-button" href="${
             result.recipe.url
-          }"target="_blank">View Recipe</a>
-          <a class="relative-video" href="#">Relative Video</a>
+          }"target="_blank">View Recipe</a> <br>
+    
+          <a class="relative-video" href="${result.snippet.thumbnails.default.url}">Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
-       <p class="title">${
+       <p class="title is-size-5 ">${
          result.recipe.dietLabels.length > 0
            ? result.recipe.dietLabels
            : "No Data Found"
        }</p> 
-          <p class="title">${result.recipe.healthLabels}</p> 
+          <p class="title is-size-5">${result.recipe.healthLabels}</p> 
        
        `;
   });
@@ -52,13 +62,11 @@ function generateHTML(results) {
   $(".relative-video").click(searchYouTube)
 }
 
-async function searchYouTube(label){
-  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${label}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
-  const response = await fetch(baseYouTubeURL);
-  console.log(response);
-  const data = await response.json();
+// async function searchYouTube(searchQuery){
+//   const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
+//   const response = await fetch(baseYouTubeURL);
+//   console.log(response);
+//   const data = await response.json();
  
- 
-  console.log(label)
-}
-
+//   console.log(data)
+// }
