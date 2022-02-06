@@ -19,15 +19,20 @@ html{
     font-weight: 600;
 }
 
-section{    
+ section{    
     min-height: 100vh;
     width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
 padding: 100px;
-background-color: antiquewhite;
+/*background-color: antiquewhite;*/
+} 
+
+.flex-container h1{
+    font-size:2rem;
 }
+
 
 .container {
     width: 90%;
@@ -79,6 +84,7 @@ form ion-icon{
     background-color: goldenrod;
     padding: 15px;
     overflow: hidden;
+   
 
 
 }
@@ -96,9 +102,10 @@ form ion-icon{
 .item .title {
     color: gray;
     margin: 20px 10px 0 0;
-    font-size: 1.8rem;
+    font-size: 0.5rem;
     font-weight: 400;
 }
+
 
 .view-button .relative-video {
   text-decoration: none;
@@ -121,6 +128,34 @@ align-self: flex-start;
     line-height: 2rem;
     
 
+}
+
+p {
+    font-size: 0.5rem;
+}
+
+@media screen and (min-width: 768px){
+.search-result{
+        display: grid;
+        grid-template-columns: repeat(5, 5fr);
+        gap: 2rem;
+    
+    }
+
+    /* .flex-container{
+        margin: 0;
+    }
+    .flex-container{
+        width: 700px;
+    } */
+
+    
+}
+
+@media screen and (min-width: 992px){
+.item{
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 
