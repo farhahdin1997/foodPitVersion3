@@ -26,14 +26,16 @@ async function fetchAPI(searchQuery) {
 async function searchYouTube(searchQuery){
   const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/videos?q=${searchQuery}&part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=${APP_youtube}`;
   const response = await fetch(baseYouTubeURL);
-  console.log(response);
+  console.log(baseYouTubeURL)
+  const data= await response.json();
+  console.log(data)
   
-  return response.json();
-  // generateHTML(data.snippet);
   // console.log(data)
+  
 }
 
 function generateHTML(results) {
+  console.log(results)
   let generatedHTML = "";
   results.map((result) => {
     generatedHTML += `  <div class="item">
@@ -46,7 +48,7 @@ function generateHTML(results) {
             result.recipe.url
           }"target="_blank">View Recipe</a> <br>
     
-          <a class="relative-video" href="${result.snippet.thumbnails.default.url}">Relative Video</a>
+          <a class="relative-video" href="#">Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
        <p class="title is-size-5 ">${
