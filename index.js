@@ -51,8 +51,12 @@ function generateHTML(results) {
           <a class="view-button" href="${
             result.recipe.url
           }"target="_blank">View Recipe</a> <br>
+
     
           <a class="relative-video" data-source="${result.recipe.label}" >Relative Video</a>
+
+          <a class="relative-video" href="#">Relative Video</a>
+
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
        <p class="title is-size-5 ">${
@@ -68,6 +72,7 @@ function generateHTML(results) {
   $(".relative-video").click(searchYouTube)
 }
 
+
 // async function searchYouTube(searchQuery){
 //   const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
 //   const response = await fetch(baseYouTubeURL);
@@ -76,3 +81,6 @@ function generateHTML(results) {
  
 //   console.log(data)
 // }
+
+
+
