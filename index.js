@@ -52,7 +52,7 @@ function generateHTML(results) {
             result.recipe.url
           }"target="_blank">View Recipe</a> <br>
     
-          <a class="relative-video" data-source="${result.recipe.label}" >Relative Video</a>
+          <a class="relative-video" data-source="${result.recipe.label}" href="#" >Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
        <p class="title is-size-5 ">${
