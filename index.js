@@ -3,6 +3,7 @@ const searchResultDiv = document.querySelector(".search-result");
 const container = document.querySelector(".container");
 let searchQuery = "";
 
+
 const APP_ID = "753e732f";
 const APP_key_recipe = "919bc78d8050b9b0caf8f5423c444aa1";
 const APP_youtube= "AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0"
@@ -23,15 +24,18 @@ async function fetchAPI(searchQuery) {
   generateHTML(data.hits);
   console.log(data);
 }
-async function searchYouTube(searchQuery){
-  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/videos?q=${searchQuery}&part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=${APP_youtube}`;
-  const response = await fetch(baseYouTubeURL);
+async function searchYouTube(event){
+  console.log(event.target.dataset.source)
+  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${event.target.dataset.source}&type=video&key=${APP_youtube}`;
   console.log(baseYouTubeURL)
+  const response = await fetch(baseYouTubeURL);
+
   const data= await response.json();
   console.log(data)
-  
-  // console.log(data)
-  
+  const videoId= data.items[0].id.videoId
+  const url= `https://youtube.com/watch/${videoId}`
+  $('.relative-video').attr( 'href', `https://youtube.com/watch/${videoId}`)
+  console.log(url)
 }
 
 function generateHTML(results) {
@@ -48,7 +52,7 @@ function generateHTML(results) {
             result.recipe.url
           }"target="_blank">View Recipe</a> <br>
     
-          <a class="relative-video" href="#">Relative Video</a>
+          <a class="relative-video" data-source="${result.recipe.label}" >Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
        <p class="title is-size-5 ">${
