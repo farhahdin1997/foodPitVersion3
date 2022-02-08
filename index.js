@@ -5,7 +5,7 @@ let searchQuery = "";
 
 const APP_ID = "753e732f";
 const APP_key_recipe = "919bc78d8050b9b0caf8f5423c444aa1";
-const APP_youtube= "AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0"
+const APP_youtube= "AIzaSyDunnJ2Do7VeVnXLsRTg6ZlqNmlh2oaLMA"
 
 // https://api.edamam.com/api/nutrition-data?ingr=pizza&app_id=${APP_ID}&app_key=${APP_key_nutrition}&to=10
 
@@ -27,7 +27,7 @@ async function fetchAPI(searchQuery) {
 function generateHTML(results) {
   let generatedHTML = "";
   results.map((result) => {
-    generatedHTML += `  <div class="item">
+    generatedHTML += `  <div class="item ">
         <img src="${result.recipe.image}" alt="">
        </div>
        <div class="flex-container">
@@ -36,10 +36,10 @@ function generateHTML(results) {
           <a class="view-button" href="${
             result.recipe.url
           }"target="_blank">View Recipe</a> <br>
-          <a class="relative-video" href="#">Relative Video</a>
+          <a class="relative-video" data-source= "${result.recipe.label}" href="#">Relative Video</a>
        </div>
        <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
-       <p class="title is-size-5 ">${
+       <p class="title is-size-5  ">${
          result.recipe.dietLabels.length > 0
            ? result.recipe.dietLabels
            : "No Data Found"
@@ -52,13 +52,15 @@ function generateHTML(results) {
   $(".relative-video").click(searchYouTube)
 }
 
-async function searchYouTube(recipe){
-  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${recipe}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
+async function searchYouTube(event){
+  console.log(event)
+  const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=${APP_youtube}`
+  console.log(baseYouTubeURL)
   const response = await fetch(baseYouTubeURL);
-  console.log(response);
   const data = await response.json();
- 
- 
-  console.log(recipe)
+  console.log(data);
+const videoId = data.items[0].id.videoId
+const url =`https://youtube.com/watch/${videoId}`
+  console.log(url)
 }
 

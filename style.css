@@ -90,8 +90,8 @@ form ion-icon{
 }
 
 .item {
-    width: 30%;
-    height: 200px;
+    width:75%;
+    height: 400px;
     border-radius: 4px;
 }
 .item .flex-container {
@@ -137,17 +137,17 @@ p {
 @media screen and (min-width: 768px){
 .search-result{
         display: grid;
-        grid-template-columns: repeat(5, 5fr);
+        grid-template-columns: repeat(3, 2fr);
         gap: 2rem;
     
     }
 
-    /* .flex-container{
+     /* .flex-container{
         margin: 0;
     }
     .flex-container{
         width: 700px;
-    } */
+    }  */
 
     
 }

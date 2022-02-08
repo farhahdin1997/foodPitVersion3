@@ -1,9 +1,10 @@
 
-##Food Pit
+#Food Pit
 
+#Description
 As a group we have developed an application that allows users to view recipes easily. It allows users to also view videos of a particular recipe. The application can be view on a phone and desktop device.
 
-##Technologies used
+#Technologies used
 
 ```
 HTML
@@ -14,7 +15,7 @@ CSS
 
 ```
 
-##USER STORY
+#USER STORY
 ```
 As a user 
 I want to be able to search recipes 
@@ -25,7 +26,7 @@ So that i can view easily on my mobile
 
 ```
 
-##MOCK UP
+#MOCK UP
 
 
 
