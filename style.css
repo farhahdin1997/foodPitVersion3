@@ -42,14 +42,23 @@ background-color: antiquewhite;
    color: black;
    margin-bottom: 30px; 
 }
+.description {
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 30px; 
+ }
 
-form {
-    width: 90%;
+ form {
+    width: 100%;
     max-width: 400px;
     margin: 20px auto;
-    background-color:white;
+    justify-content: center;
     border-radius:4px ;
-}
+    width: 300px;
+    
+    align-items: center;
+} 
 
 form input{
     width: 90%;
@@ -60,12 +69,12 @@ form input{
     font-size: 2rem;
     display: inline-block;
 }
-form ion-icon{
+/* form ion-icon{
     width: 9%;
     font-size: 3rem;
     margin: -9px;
     color: tomato;
-}
+} */
 .search-result{
     margin-top: 50px;
     width: 100%;
@@ -123,4 +132,7 @@ align-self: flex-start;
 
 }
 
-
+ 
+.input-size{
+    width: 300px;
+}

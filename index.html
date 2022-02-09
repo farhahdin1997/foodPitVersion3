@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -26,11 +27,33 @@
    <section>
        <div class='container'>
            <h1 class="brand">Food Pit</h1>
+           <P class="description">My recipes Book</P>
+
+
+           
            <form>
-               <input type="text" placeholder="Search Your Recipe...">
-               <ion-icon name="search"></ion-icon>
-           </form>
+               <!-- <input type="text" placeholder="Search Your Recipe..."> -->
+               <!-- <ion-icon name="search"></ion-icon> -->
+               <!-- <div class="control">
+                <button class="button is-primary">Submit</button>
+              </div> -->
+              
+           
+           <div class="field has-addons">
+            <div class="control">
+              <input class="input input-size" type="text" placeholder="Search Your Recipe...">
+            </div>
+            <div class="control">
+              <a class="button is-info">
+                Search
+              </a>
+            </div>
+          </div>
+        </form>
+           
+           
            <div class='search-result'>
+
           
                 <!-- <div class="item">
                 <img src="download.jpeg" alt="Picture of Pizza">
