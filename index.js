@@ -59,33 +59,37 @@ function generateHTML(results) {
   console.log(results);
   let generatedHTML = "";
   results.map((result) => {
-    generatedHTML += `  <div  class="item">
+    generatedHTML += ` 
+    <container class="columns"> 
+    <div class="column">
+       <div>
+    
+          <h1 class="title">${result.recipe.label}</h1>
+          <div  class="item">
         <img src="${result.recipe.image}" alt="">
        </div>
-       <div class="flex-container">
-          <h1 class="title">${result.recipe.label}</h1>
-          
+
+       <div >
           <a class="view-button" href="${
             result.recipe.url
           }"target="_blank">View Recipe</a> <br>
+
     
           <a class="relative-video" data-source="${
             result.recipe.label
           }" href="#" >Relative Video</a>
        </div>
-       <p class="item-data">Calories: ${result.recipe.calories.toFixed(0)}</p>
-       <p class="title is-size-5 ">${
-         result.recipe.dietLabels.length > 0
-           ? result.recipe.dietLabels
-           : "No Data Found"
-       }</p> 
-          <p class="title is-size-5">${result.recipe.healthLabels}</p> 
+       </div>
+       </container>
        
        `;
   });
   searchResultDiv.innerHTML = generatedHTML;
+
+  // open a new link on youtube when the button is clicked for video search
   $(".relative-video").click(searchYouTube);
 }
+
 
 // async function searchYouTube(searchQuery){
 //   const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${searchQuery}&type=video&key=AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0`;
@@ -95,3 +99,6 @@ function generateHTML(results) {
 
 //   console.log(data)
 // }
+
+
+
