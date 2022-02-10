@@ -1,10 +1,11 @@
 
-#Food Pit
 
-#Description
+
+##Food Pit
+
 As a group we have developed an application that allows users to view recipes easily. It allows users to also view videos of a particular recipe. The application can be view on a phone and desktop device.
 
-#Technologies used
+##Technologies used
 
 ```
 HTML
