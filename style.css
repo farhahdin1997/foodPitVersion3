@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700;800&family=Supermercado+One&display=swap');
 
 * {
@@ -42,23 +43,14 @@ background-color: antiquewhite;
    color: black;
    margin-bottom: 30px; 
 }
-.description {
-    text-align: center;
-    font-size: 2rem;
-    color: black;
-    margin-bottom: 30px; 
- }
 
- form {
-    width: 100%;
+form {
+    width: 90%;
     max-width: 400px;
     margin: 20px auto;
-    justify-content: center;
+    background-color:white;
     border-radius:4px ;
-    width: 300px;
-    
-    align-items: center;
-} 
+}
 
 form input{
     width: 90%;
@@ -69,12 +61,12 @@ form input{
     font-size: 2rem;
     display: inline-block;
 }
-/* form ion-icon{
+form ion-icon{
     width: 9%;
     font-size: 3rem;
     margin: -9px;
     color: tomato;
-} */
+}
 .search-result{
     margin-top: 50px;
     width: 100%;
@@ -132,7 +124,3 @@ align-self: flex-start;
 
 }
 
- 
-.input-size{
-    width: 300px;
-}
