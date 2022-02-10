@@ -18,11 +18,11 @@ CSS
 #USER STORY
 ```
 As a user 
-I want to be able to search recipes 
-I want to be able to view youtube videos too
-So i can have multiple ways of following a recipe
-I want it to be also responsive
-So that i can view easily on my mobile 
+I WANT to be able to search recipes 
+I WANT to be able to view youtube videos too
+SO I CAN have multiple ways of following a recipe
+I WANT it to be also responsive
+SO THAT i can view easily on my mobile 
 
 ```
 
