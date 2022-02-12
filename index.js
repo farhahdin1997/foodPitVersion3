@@ -1,5 +1,5 @@
 
-//declaring  variabales including apis ids and keys
+//declaring  variables including apis ids and keys
 
 const searchForm = document.querySelector("#search-bar");
 const searchResultDiv = document.querySelector(".search-result");
@@ -51,7 +51,6 @@ async function fetchAPI(searchQuery) {
 
 async function searchYouTube(event) {
   console.log(event.target.dataset.source);
-  D;
   const baseYouTubeURL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${event.target.dataset.source}&type=video&key=${APP_youtube}`;
   const response = await fetch(baseYouTubeURL);
 
