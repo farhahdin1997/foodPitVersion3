@@ -34,6 +34,8 @@ SO THAT i can view easily on my mobile
  YouTube.com API Key: APP_youtube = "AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0";
  YouTube uses your Google Account for ID purposes;
 
+Power Point Link <br>
+[https://docs.google.com/presentation/d/11swmXrmDyJbRdrlIZ-CJ7W5Unye4RqQEy7LKEBU89FE/edit?usp=sharing](https://docs.google.com/presentation/d/11swmXrmDyJbRdrlIZ-CJ7W5Unye4RqQEy7LKEBU89FE/edit?usp=sharing)
 
 Deployment <br>
  [https://farhahdin1997.github.io/foodPitVersion3/](https://farhahdin1997.github.io/foodPitVersion3/)
