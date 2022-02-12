@@ -41,4 +41,4 @@ Deployment <br>
 Repository <br>
 [https://github.com/farhahdin1997/foodPitVersion3](https://github.com/farhahdin1997/foodPitVersion3)
 
-![This is How our Website look like ]{/food-pit-img.png}
+![This is How our Website look like ]{food-pit-img.png}
