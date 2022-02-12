@@ -29,7 +29,10 @@ SO THAT i can view easily on my mobile
 
 #MOCK UP
 
-
+ Edamam.com API ID :  APP_ID = "6e800d82";
+ Edamam.com API Key:  APP_key_recipe = "c5603f4821b4f87ae1e3dafcda7b328d";
+ YouTube.com API Key: APP_youtube = "AIzaSyDePJu7r8npNaIknsEXLRUTajXIxst0Cf0";
+ YouTube uses your Google Account for ID purposes;
 
 
 Deployment <br>
@@ -37,3 +40,5 @@ Deployment <br>
 
 Repository <br>
 [https://github.com/farhahdin1997/foodPitVersion3](https://github.com/farhahdin1997/foodPitVersion3)
+
+![This is How our Website look like ]{/food-pit-img.png}
